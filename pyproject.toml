@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ecg-viewer"
+version = "0.1.0"
+description = "Load ECG recordings (WFDB, CSV, NPY) and draw them on a standard ECG grid"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.21", "matplotlib>=3.5", "wfdb>=4.0"]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+ecg-view = "ecg_viewer.cli:main"
+
+[tool.setuptools]
+packages = ["ecg_viewer"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
